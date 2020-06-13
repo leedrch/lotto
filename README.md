@@ -1,4 +1,4 @@
-node-red-node-mysql
+node-red-contrib-lotto
 ========================
 A <a href="http://nodered.org" target="_new">Node-RED</a> node that when triggered generates several random numbers.
 
