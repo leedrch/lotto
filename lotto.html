@@ -1,0 +1,57 @@
+
+<script type="text/x-red" data-template-name="lotto">
+    <div class="form-row">
+        <label for="node-input-property"><i class="fa fa-ellipsis-h"></i> <span data-i18n="node-red:common.label.property"></span></label>
+        <input type="text" id="node-input-property" style="width:70%;"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-low"><i class="fa fa-arrow-down"></i> From</label>
+        <input type="text" id="node-input-low" placeholder="lowest number" style="width:70%;">
+    </div>
+    <div class="form-row">
+        <label for="node-input-high"><i class="fa fa-arrow-up"></i> To</label>
+        <input type="text" id="node-input-high" placeholder="highest number" style="width:70%;">
+    </div>
+    <div class="form-row">
+        <label for="node-input-cnt"><i class="fa fa-tag"></i> Numbers</label>
+        <input type="text" id="node-input-cnt" placeholder="Lottery number" style="width:70%;">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name" style="width:70%;">
+    </div>
+</script>
+<script type="text/x-red" data-help-name="lotto">
+    <p>Generates a Lottery number between a low and high value.</p>
+    <p>Have Fun!</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('lotto',{
+        category: 'Game',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},
+            low: {value:"1"},
+            high: {value:"45"},
+            cnt: {value:"7"},
+            property: {value:"payload",required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "debug.png",
+        label: function() {
+            return this.name||"Lotto";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        },
+        oneditprepare: function() {
+            if (this.property === undefined) {
+                $("#node-input-property").val("payload");
+            }
+            $("#node-input-property").typedInput({default:'msg',types:['msg']});
+        }
+    });
+</script>

@@ -1,0 +1,24 @@
+{
+  "name" : "node-red-contrib-lotto",
+  "description": "Lottery Numbers",
+  "author": {
+    "name": "Daniel Lee",
+    "email": "leedrch@naver.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "node-red",
+    "lotto",
+    "lottery"
+  ],
+  "node-red": {
+    "nodes": {
+      "lotto": "lotto.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leedrch/lotto.git"
+  },
+  "version": "0.0.1"
+}
