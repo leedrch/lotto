@@ -8,14 +8,17 @@ module.exports = function(RED) {
         var node = this;
         var value = [];
         this.on("input", function(msg) {
-           for (var i = 0; i < node.cnt; i++){
-	    value[i] = Math.round(Math.random() * (node.high - node.low + 1) + node.low - 0.5);
-	    for (var j = 0; j < i; j++){ 
-		if ( value[j] == value[i] && node.cnt < (node.high-node.low) ){
-		 i--; }}
-	  }
-            RED.util.setMessageProperty(msg,node.property,value);
-            node.send(msg);
-        });
-    }    RED.nodes.registerType("lotto",Lotto);
+          for (var i = 0; i < node.cnt; i++){
+      	    value[i] = Math.round(Math.random() * (node.high - node.low + 1) + node.low - 0.5);
+      	    for (var j = 0; j < i; j++){
+          		if ( value[j] == value[i] && node.cnt < (node.high-node.low) ){
+          		 i--;
+             }
+           }
+         }
+         RED.util.setMessageProperty(msg,node.property,value);
+         node.send(msg);
+       });
+    }
+    RED.nodes.registerType("lotto",Lotto);
 }
