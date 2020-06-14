@@ -1,5 +1,5 @@
 {
-  "name" : "node-red-contrib-Lottery",
+  "name": "node-red-contrib-lottery",
   "description": "Lottery Numbers",
   "author": {
     "name": "Daniel Lee",
@@ -20,5 +20,7 @@
     "type": "git",
     "url": "https://github.com/leedrch/lotto.git"
   },
-  "version": "0.0.2"
+  "version": "0.0.1",
+  "dependencies": {
+  }
 }
